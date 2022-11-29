@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -64,24 +65,31 @@
                 <div class="mb-3">
                     <label for="correo" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Correo:</b></label>
                     <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
+                    <% if (session.getAttribute("msjmail")==null){%>
+                    <div class="alert alert-danger" role="alert">
+                        <%=session.getAttribute("msjmail")%>
+                    </div>
+                    <% session.removeAttribute("msjmail");%>
+                    <%}%>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Contraseña:</b></label>
                     <input type="password" class="form-control" id="password"  name="password">
                 </div>
-                <!-- si las contraseñas son iguales debe de aparecer mensaje de error-->
-                <div class="alert alert-danger" role="alert">
-                    EJEMPLO DE MENSAJE DE ERROR
-                </div>
+                <% if (session.getAttribute("msj")==null){%>
+                    <div class="alert alert-danger" role="alert">
+                        <%=session.getAttribute("msj")%>
+                    </div>
+                <% session.removeAttribute("msj");%>
+                <%}%>
                 <div class="mb-3">
                     <label for="password2" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Repita su contraseña:</b></label>
                     <input type="password" class="form-control" id="password2" name="password2">
                 </div>
                 <div class="mb-3">
                     <p style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Ingrese el tipo de Usuario</b></p>
-                    <br>
                     <div class="input-group mb-3">
-                        <select class="form-select" id="inputGroupSelect01">
+                        <select class="form-select" id="tipo" name="tipo">
                             <option selected>Seleccionar...</option>
                             <option value="interno">Interno</option>
                             <option value="externo">Externo</option>

@@ -1,5 +1,6 @@
 package com.example.ef_g7.Servlets;
 
+import com.example.ef_g7.Beans.User;
 import com.example.ef_g7.Daos.RegistroInicioDao;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -48,6 +49,31 @@ public class SessionServlet extends HttpServlet {
             case"guardar":
                 String nombre = request.getParameter("name");
                 String apellido = request.getParameter("apellido");
+                String correo = request.getParameter("correo");
+                String password = request.getParameter("password");
+                String password2 = request.getParameter("password2");
+                String tipoUsuario = request.getParameter("tipo");
+                if(ri.validmail(correo)){
+                    if(password2.equals(password)){
+                        User user = new User();
+                        user.setNombre(nombre);
+                        user.setApellido(apellido);
+                        user.setPassword(password);
+                        user.setCorreo(correo);
+                        user.setTipoUsuario(tipoUsuario);
+                        ri.guardar(user);
+                        response.sendRedirect(request.getContextPath() + "/SessionServlet");
+                    }
+                    else{
+                        request.getSession().setAttribute("msj","las contraseñas deben ser iguales");
+                        response.sendRedirect(request.getContextPath()+"/SessionServlet?action=registro");
+                    }
+                }
+                else{
+                    request.getSession().setAttribute("msjmail","El correo ingresado ya esta en uso.");
+                    response.sendRedirect(request.getContextPath()+"/SessionServlet?action=registro");
+                }
+
         }
 
     }
