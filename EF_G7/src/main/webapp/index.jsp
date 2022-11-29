@@ -74,7 +74,7 @@
                 </div>
                 <br>
             </form>
-            <a href="<%=request.getContextPath()%>/registro.jsp"><b>Registrarse</b></a>
+        <a href=<%=request.getContextPath()%>/SessionServlet?action=registro"><button class="d-grid gap-1 col-2 mx-auto btn btn-primary" type="button">Registro</button></a>
             <br>
         </div>
     </div>
