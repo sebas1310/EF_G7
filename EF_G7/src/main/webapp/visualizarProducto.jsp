@@ -41,8 +41,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
 <body class="p-3 m-0 border-0 bd-example">
+
+<nav class="navbar navbar-expand-lg" style="background-color: #152039;" aria-label="Eighth navbar example">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="resources/Images/logopucp.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top"><b style="color:#FFFFFF"> VEO 3D</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2"><b style="color:#1A3B85">NOMBRE USUARIO</b></a></li>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none" aria-expanded="false">
+                        <img src="http://diaferdesign.com/wp-content/uploads/2017/11/diana-fondo-desenfocado-circular-300x283.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                </div>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <a class="dropdown-item" href="<%=request.getContextPath()%>/ServletInicio?action=logout"><u
+                        style="color:#FFFFFF"><b>Cerrar sesion > </b></u></a>
+            </form>
+        </div>
+    </div>
+</nav>
+
 <br>
 <center>
     <div class="card mb-3" style="max-width: 58rem; background-color:#152039" >
@@ -100,7 +125,19 @@
                     </div>
                 </div>
                 <br>
-                <button type="button" class="btn btn-danger" href="<%=request.getContextPath()%>/***"><b>Guardar</b></button>
+                <button type="button" class="btn btn-danger" href="<%=request.getContextPath()%>/listar.jsp"><b>Confirmar</b></button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Rechazar</button>
+
+                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Por favor, ingrese motivo del rechazo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-danger" href="<%=request.getContextPath()%>/listar.jsp"><b>Aceptar</b></button>
+                </div>
             </form>
             <br>
         </div>
