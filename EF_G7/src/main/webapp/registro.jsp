@@ -65,7 +65,7 @@
                 <div class="mb-3">
                     <label for="correo" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Correo:</b></label>
                     <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
-                    <% if (session.getAttribute("msjmail")==null){%>
+                    <% if (session.getAttribute("msjmail")!=null){%>
                     <div class="alert alert-danger" role="alert">
                         <%=session.getAttribute("msjmail")%>
                     </div>
@@ -76,7 +76,7 @@
                     <label for="password" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Contraseña:</b></label>
                     <input type="password" class="form-control" id="password"  name="password">
                 </div>
-                <% if (session.getAttribute("msj")==null){%>
+                <% if (session.getAttribute("msj")!=null){%>
                     <div class="alert alert-danger" role="alert">
                         <%=session.getAttribute("msj")%>
                     </div>
