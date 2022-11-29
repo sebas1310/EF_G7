@@ -75,15 +75,14 @@
                         <option value="3">CARTÓN</option>
                     </select>
                 </div>
-
-                DIMENSIONES
-                <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Dimensiones</option>
-                        <option value="1">Acrilico</option>
-                        <option value="2">MDF</option>
-                        <option value="3">CARTÓN</option>
-                    </select>
+                <div class="row mb-3">
+                    <label for="colFormLabel" class="col-sm-2 col-form-label">Dimensiones</label>
+                    <div class="col-sm-5">
+                        <input type="number" class="form-control" id="colFormLabel1" placeholder="Alto cm">
+                    </div>
+                    <div class="col-sm-5">
+                        <input type="number" class="form-control" id="colFormLabel" placeholder="Ancho cm">
+                    </div>
                 </div>
 
                 <div class="row g-3 align-items-center">
