@@ -52,44 +52,40 @@
         <h3 style="font-family: 'KrinkesDecorPERSONAL'; color:#C0A5FA" class="card-title"><b>Ingrese sus datos</b></h3>
         <br>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <form>
+            <form method="post" action="<%=request.getContextPath()%>/SessionServlet?action=guardar">
                 <div class="mb-3">
                     <label for="name" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Nombre:</b></label>
-                    <input type="name" class="form-control" id="name" aria-describedby="name">
+                    <input class="form-control" id="name" aria-describedby="name" name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Apellido:</b></label>
-                    <input type="apellido" class="form-control" id="apellido" aria-describedby="name">
+                    <label for="apellido" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Apellido:</b></label>
+                    <input class="form-control" id="apellido" aria-describedby="name" name="apellido">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Correo:</b></label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="correo" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Correo:</b></label>
+                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Contraseña:</b></label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="password" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Contraseña:</b></label>
+                    <input type="password" class="form-control" id="password"  name="password">
                 </div>
                 <!-- si las contraseñas son iguales debe de aparecer mensaje de error-->
                 <div class="alert alert-danger" role="alert">
                     EJEMPLO DE MENSAJE DE ERROR
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Repita su contraseña:</b></label>
-                    <input type="password" class="form-control" id="exampleInputPassword2">
+                    <label for="password2" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Repita su contraseña:</b></label>
+                    <input type="password" class="form-control" id="password2" name="password2">
                 </div>
                 <div class="mb-3">
                     <p style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Ingrese el tipo de Usuario</b></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-                        <label class="form-check-label" for="flexRadioDefault1" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF">
-                            Externo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF">
-                            Interno
-                        </label>
+                    <br>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Seleccionar...</option>
+                            <option value="interno">Interno</option>
+                            <option value="externo">Externo</option>
+                        </select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
