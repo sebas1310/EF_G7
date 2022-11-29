@@ -54,7 +54,7 @@
         <div class="d-grid gap-2 col-6 mx-auto">
             <form>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Nombre:</b></label>
+                    <label for="name" class="form-label" style="font-family: 'KrinkesDecorPERSONAL'; color:#FFFFFF"><b>Nombre:</b></label>
                     <input type="name" class="form-control" id="name" aria-describedby="name">
                 </div>
                 <div class="mb-3">

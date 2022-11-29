@@ -7,7 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,12 +53,67 @@
     <br>
     <div class="d-grid gap-2 col-6 mx-auto">
       <form>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Tipo de servicio</option>
-          <option value="1">Impresión 3D</option>
-          <option value="2">Corte Láser</option>
-          <option value="3">Escaneo Digital 3D</option>
-        </select>
+        <div class="mb-3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Densidad de la Pieza</option>
+            <option value="1">10</option>
+            <option value="2">15</option>
+            <option value="3">20</option>
+            <option value="4">30</option>
+            <option value="5">50</option>
+            <option value="6">90</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Grosor</option>
+            <option value="1">Fino</option>
+            <option value="2">Normal</option>
+            <option value="3">Grueso</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Altura de la capa</option>
+            <option value="1">0.1</option>
+            <option value="2">0.2</option>
+            <option value="3">0.3</option>
+            <option value="3">0.4</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Tipo de material</option>
+            <option value="1">abs</option>
+            <option value="2">pla</option>
+            <option value="3">felxible</option>
+          </select>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="urlimagen" class="col-form-label">URL de la imagen</label>
+          </div>
+          <div class="col-auto">
+            <input type="url" id="urlimagen" class="form-control" aria-describedby="passwordHelpInline">
+          </div>
+        </div>
+        <div class="mb-3">
+          <p>AUTOSERVICIO</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Si
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="">
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-danger" href="<%=request.getContextPath()%>/***"><b>Guardar</b></button>
       </form>
       <br>
     </div>
