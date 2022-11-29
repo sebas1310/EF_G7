@@ -1,5 +1,6 @@
 package com.example.ef_g7.Servlets;
 
+import com.example.ef_g7.Daos.RegistroInicioDao;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -41,6 +42,13 @@ public class SessionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        RegistroInicioDao ri = new RegistroInicioDao();
+        switch (action){
+            case"guardar":
+                String nombre = request.getParameter("name");
+                String apellido = request.getParameter("apellido");
+        }
 
     }
 }
